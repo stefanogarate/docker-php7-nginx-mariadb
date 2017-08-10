@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb
+    volumes: 
+      - ./.data/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "123"
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "desarrollo"
+      MYSQL_PASSWORD: "123"
+  php:
+    build: php7-fpm
+    volumes: 
+      - ./src:/var/www/html
+  nginx:
+    build: nginx
+    ports:
+      - 80:80
+    volumes_from:
+      - php
+    volumes:
+      - ./.logs/nginx:/var/log/nginx
