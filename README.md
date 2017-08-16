@@ -20,4 +20,4 @@ $ docker-compose exec nginx shell
 
 ## TODO
 
-1. Solucionar problema al montar volumen de base de datos
+1. Solucionar problema al montar volumen de base de datos en windows (https://github.com/docker-library/mariadb/issues/95)
