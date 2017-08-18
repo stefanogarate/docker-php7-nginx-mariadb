@@ -1,7 +1,8 @@
 FROM php:7.0-fpm
 
-# Para test
-#RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
+    git  \
+    zip
 #    procps \
 #    vim
 
