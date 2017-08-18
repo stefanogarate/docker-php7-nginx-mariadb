@@ -18,7 +18,10 @@ services:
     build: nginx
     ports:
       - 80:80
+      - 8090:90
+      - 8088:88
     volumes_from:
       - php
     volumes:
       - ./.logs/nginx:/var/log/nginx
+      - ./nginx/sites:/etc/nginx/conf.d/sites
