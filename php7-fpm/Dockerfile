@@ -14,3 +14,6 @@ RUN ln -s /usr/share/zoneinfo/Chile/Continental /etc/localtime
 RUN "date"
 
 RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install opcache
+RUN pecl install apcu
+RUN docker-php-ext-enable apcu
